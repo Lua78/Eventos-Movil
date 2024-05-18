@@ -1,5 +1,6 @@
-package com.example.eventosunp
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -8,29 +9,28 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.eventosunp.R
 
-class MainActivity : AppCompatActivity() {
+
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-    }
+        setContentView(R.layout.activity_login)
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+        buttonLogin.setOnClickListener {
+            val username = editTextUsername.text.toString()
+            val password = editTextPassword.text.toString()
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.Agregar -> Toast.makeText(this, "boton agregar", Toast.LENGTH_SHORT).show()
-            R.id.Usuarios -> Toast.makeText(this, "boton agregar", Toast.LENGTH_SHORT).show()
+            // Aquí deberías agregar la lógica para autenticar al usuario
+            // Puedes utilizar Retrofit para enviar la solicitud de inicio de sesión al servidor
+
+            // Por ahora, simplemente vamos a mostrar un mensaje de éxito
+            Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+
+            // Después del inicio de sesión exitoso, navega a la actividad principal
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish() // Esto cierra la actividad actual (LoginActivity) para evitar que el usuario regrese
         }
-        return super.onOptionsItemSelected(item)
     }
 }

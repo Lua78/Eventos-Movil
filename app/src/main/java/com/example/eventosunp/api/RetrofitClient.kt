@@ -1,4 +1,4 @@
-package api
+package com.example.eventosunp.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

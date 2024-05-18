@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id = "@+id/Agregar"
+        android:title="Agregar Evento"
+        android:icon="@drawable/baseline_plus_one_24"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id = "@+id/Usuarios"
+        android:title="@string/usuarios"
+        android:icon="@drawable/baseline_account_box_24"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id = "@+id/Eventos"
+        android:title="Eventos"
+        android:icon="@drawable/baseline_announcement_24"
+        app:showAsAction="ifRoom"
+        />
 </menu>

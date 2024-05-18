@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EventosUNP</string>
+    <string name="usuarios">Usuarios</string>
 </resources>
