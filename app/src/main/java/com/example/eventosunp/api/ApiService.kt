@@ -8,5 +8,5 @@ data class UserData(val usuario: String, val contrasena: String)
 
 interface ApiService {
     @POST("/com/example/eventosunp/api/usuarios/login")
-    fun login(@Body userData: UserData): Call<Any> // Cambia 'Any' al tipo de respuesta que esperas recibir
+    fun login(@Body userData: UserData): Call<Any>
 }
