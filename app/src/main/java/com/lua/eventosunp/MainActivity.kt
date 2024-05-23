@@ -1,4 +1,4 @@
-package com.example.eventosunp
+package com.lua.eventosunp
 
 import android.os.Bundle
 import android.view.Menu
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.Agregar -> Toast.makeText(this, "boton agregar", Toast.LENGTH_SHORT).show()
+            R.id.Eventos -> Toast.makeText(this, "boton eventos", Toast.LENGTH_SHORT).show()
             R.id.Usuarios -> Toast.makeText(this, "boton agregar", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)

@@ -1,4 +1,4 @@
-package com.example.eventosunp.ui.login
+package com.lua.eventosunp.ui.login
 
 /**
  * Authentication result : success (user details) or error message.

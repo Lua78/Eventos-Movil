@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.eventosunp"
+    namespace = "com.lua.eventosunp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.eventosunp"
+        applicationId ="com.lua.eventosunp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -43,8 +43,8 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     //retrofit
-    implementation(libs.retrofit)
-    implementation("com.squareup.retrofit2:converter-gson:2.10.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     implementation(libs.androidx.annotation)
     implementation(libs.androidx.lifecycle.livedata.ktx)

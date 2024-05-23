@@ -1,4 +1,4 @@
-package com.example.eventosunp.data
+package com.lua.eventosunp.data
 
 /**
  * A generic class that holds a value with its loading status.

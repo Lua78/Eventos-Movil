@@ -1,4 +1,4 @@
-package com.example.eventosunp.ui.login
+package com.lua.eventosunp.ui.login
 
 /**
  * User details post authentication that is exposed to the UI

@@ -1,9 +1,9 @@
-package com.example.eventosunp.ui.login
+package com.lua.eventosunp.ui.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.eventosunp.data.LoginDataSource
-import com.example.eventosunp.data.LoginRepository
+import com.lua.eventosunp.data.LoginDataSource
+import com.lua.eventosunp.data.LoginRepository
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

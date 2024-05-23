@@ -1,6 +1,6 @@
-package com.example.eventosunp.data
+package com.lua.eventosunp.data
 
-import com.example.eventosunp.data.model.LoggedInUser
+import com.lua.eventosunp.data.model.LoggedInUser
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -27,9 +27,9 @@ class LoginRepository(val dataSource: LoginDataSource) {
         dataSource.logout()
     }
 
-    fun login(username: String, password: String): Result<LoggedInUser> {
+    suspend fun login(username: String, contrasena: String): Result<LoggedInUser> {
         // handle login
-        val result = dataSource.login(username, password)
+        val result = dataSource.login(username, contrasena)
 
         if (result is Result.Success) {
             setLoggedInUser(result.data)

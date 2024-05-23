@@ -1,4 +1,4 @@
-package com.example.eventosunp
+package com.lua.eventosunp
 
 import org.junit.Test
 
