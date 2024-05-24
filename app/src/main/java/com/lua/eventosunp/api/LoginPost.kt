@@ -2,7 +2,7 @@ package com.lua.eventosunp.api
 
 import retrofit2.http.Body
 import retrofit2.http.POST
-import com.lua.eventosunp.data.model.LoginResponse
+import com.lua.eventosunp.data.modelos.LoginResponse
 
 data class UserData(val user: String, val password: String)
 

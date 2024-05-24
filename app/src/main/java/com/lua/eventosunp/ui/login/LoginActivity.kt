@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.lua.eventosunp.MainActivity
 import com.lua.eventosunp.R
+import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.databinding.ActivityLoginBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
@@ -119,6 +120,7 @@ class LoginActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         ).show()
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
+        this.finish()
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {

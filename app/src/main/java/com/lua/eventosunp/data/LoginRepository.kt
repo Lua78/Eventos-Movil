@@ -1,6 +1,6 @@
 package com.lua.eventosunp.data
 
-import com.lua.eventosunp.data.model.LoggedInUser
+import com.lua.eventosunp.data.modelos.LoggedInUser
 
 /**
  * Class that requests authentication and user information from the remote data source and
