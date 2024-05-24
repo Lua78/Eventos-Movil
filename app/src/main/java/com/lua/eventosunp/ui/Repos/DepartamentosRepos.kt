@@ -1,4 +1,4 @@
-package com.lua.eventosunp.data.Repos
+package com.lua.eventosunp.ui.Repos
 
 import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.api.catalogs.Departamentos

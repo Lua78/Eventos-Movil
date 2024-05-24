@@ -1,15 +1,13 @@
-package com.lua.eventosunp.data.Repos
+package com.lua.eventosunp.ui.Repos
 
 import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.api.catalogs.Alumnos
-import com.lua.eventosunp.api.catalogs.Categorias
 import com.lua.eventosunp.data.modelos.Alumno
-import com.lua.eventosunp.data.modelos.Categoria
 
 
-class CategoriasRepos {
-    private val apiService = RetrofitClient.instance.create(Categorias::class.java)
-     suspend fun getCategorias(): List<Categoria> {
+class AlumnosRepos {
+    private val apiService = RetrofitClient.instance.create(Alumnos::class.java)
+     suspend fun getAlumnos(): List<Alumno> {
         return try {
             val response = apiService.get()
             if (response.isSuccessful) {
