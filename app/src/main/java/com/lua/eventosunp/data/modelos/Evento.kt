@@ -1,5 +1,8 @@
 package com.lua.eventosunp.data.modelos
-
+data class Imagen(
+    val `data`: List<Int>,
+    val type: String
+)
 data class Evento(
     val Descripcion: String,
     val Estado: Int,
@@ -9,4 +12,9 @@ data class Evento(
     val idCategoria: Int,
     val idEvento: Int,
     val imagen: Imagen
+)
+
+data class EventosApiResponse(
+    val datos: List<Evento>,
+    val code: Int
 )

@@ -8,3 +8,9 @@ data class Usuario(
     @SerializedName("Nombre de USUARIO") val nombreDeUsuario: String,
     @SerializedName("Admin") val admin: Int
 )
+data class UsuariosApiResponse(
+    val datos: List<Usuario>,
+    val code: Int
+)
+
+

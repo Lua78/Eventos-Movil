@@ -12,9 +12,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-import com.lua.eventosunp.api.Alumnos
 import com.lua.eventosunp.api.RetrofitClient
-import com.lua.eventosunp.data.modelos.Alumno
+import com.lua.eventosunp.data.Repos.AlumnosRepos
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var drawer: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var toggle: ActionBarDrawerToggle
-    private val apiService = RetrofitClient.instance.create(Alumnos::class.java)
+    private val alumnosRepos = AlumnosRepos()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,30 +72,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
         private fun cargarAlumnos() {
         CoroutineScope(Dispatchers.Main).launch {
-            val alumnos = withContext(Dispatchers.IO) { getAlumnos() }
+            val alumnos = withContext(Dispatchers.IO) { alumnosRepos.getAlumnos() }
             if (alumnos.isNotEmpty()) {
                 Toast.makeText(this@MainActivity, "Alumnos recibidos: ${alumnos.size}", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this@MainActivity, "No se recibieron alumnos.", Toast.LENGTH_SHORT).show()
             }
-        }
-    }
-
-    private suspend fun getAlumnos(): List<Alumno> {
-        return try {
-            val response = apiService.get()
-            if (response.isSuccessful) {
-                val res = response.body()
-                if (res?.code == 1) {
-                    res.datos
-                } else {
-                    emptyList()
-                }
-            } else {
-                emptyList()
-            }
-        } catch (e: Exception) {
-            emptyList()
         }
     }
 

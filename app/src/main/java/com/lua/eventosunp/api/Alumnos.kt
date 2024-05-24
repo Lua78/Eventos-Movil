@@ -11,16 +11,3 @@ import retrofit2.Response
 
 private const val semiUrl: String = "api/alumnos/"
 
-interface Alumnos {
-    @GET(semiUrl)
-    suspend fun get():Response<AlumnosApiResponse>
-
-    @DELETE("$semiUrl{carne}")
-    suspend fun delete()
-
-    @PUT(semiUrl)
-    suspend fun update(@Body data: Alumno)
-
-    @POST(semiUrl)
-    suspend fun post(@Body alumno: Alumno)
-}

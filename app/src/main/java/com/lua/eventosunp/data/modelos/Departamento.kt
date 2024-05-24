@@ -5,3 +5,8 @@ data class Departamento(
     val Nombre: String,
     val idDepartamento: Int
 )
+
+data class DepartamentosApiResponse(
+    val datos: List<Departamento>,
+    val code: Int
+)
