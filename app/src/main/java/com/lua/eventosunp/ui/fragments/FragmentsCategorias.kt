@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
-class FragmentAlumnos : Fragment() {
+class FragmentCategorias : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var repos: AlumnosRepos

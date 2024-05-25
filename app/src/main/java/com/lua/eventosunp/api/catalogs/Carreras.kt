@@ -1,8 +1,7 @@
 package com.lua.eventosunp.api.catalogs
 
-import com.lua.eventosunp.data.modelos.Alumno
-import com.lua.eventosunp.data.modelos.AlumnosApiResponse
-import com.lua.eventosunp.data.modelos.CarrerasApiResponse
+import com.lua.eventosunp.data.DTO.Alumno
+import com.lua.eventosunp.data.DTO.CarrerasApiResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE

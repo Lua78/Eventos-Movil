@@ -2,7 +2,7 @@ package com.lua.eventosunp.ui.Repos
 
 import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.api.catalogs.Departamentos
-import com.lua.eventosunp.data.modelos.Departamento
+import com.lua.eventosunp.data.DTO.Departamento
 
 
 class DepartamentosRepos {

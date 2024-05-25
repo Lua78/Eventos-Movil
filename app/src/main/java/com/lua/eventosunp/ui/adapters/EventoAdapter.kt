@@ -8,7 +8,7 @@ import com.lua.eventosunp.ui.viewHolders.AlumnosViewHolder
 import com.lua.eventosunp.databinding.UsuarioLayoutBinding
 
 
-class AlumnoAdapter(private val alumnos: List<Alumno>) : RecyclerView.Adapter<AlumnosViewHolder>() {
+class EventoAdapter(private val alumnos: List<Alumno>) : RecyclerView.Adapter<AlumnosViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlumnosViewHolder {
         val view = UsuarioLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AlumnosViewHolder(view)

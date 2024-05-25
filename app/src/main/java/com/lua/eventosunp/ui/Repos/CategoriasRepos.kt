@@ -1,10 +1,8 @@
 package com.lua.eventosunp.ui.Repos
 
 import com.lua.eventosunp.api.RetrofitClient
-import com.lua.eventosunp.api.catalogs.Alumnos
 import com.lua.eventosunp.api.catalogs.Categorias
-import com.lua.eventosunp.data.modelos.Alumno
-import com.lua.eventosunp.data.modelos.Categoria
+import com.lua.eventosunp.data.DTO.Categoria
 
 
 class CategoriasRepos {

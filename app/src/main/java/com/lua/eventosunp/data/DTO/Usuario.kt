@@ -1,4 +1,4 @@
-package com.lua.eventosunp.data.modelos
+package com.lua.eventosunp.data.DTO
 
 import com.google.gson.annotations.SerializedName
 

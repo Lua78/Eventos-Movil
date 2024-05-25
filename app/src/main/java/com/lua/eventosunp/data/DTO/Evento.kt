@@ -1,4 +1,4 @@
-package com.lua.eventosunp.data.modelos
+package com.lua.eventosunp.data.DTO
 data class Imagen(
     val `data`: List<Int>,
     val type: String

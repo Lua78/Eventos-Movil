@@ -11,10 +11,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
-import com.lua.eventosunp.data.modelos.Alumno
 import com.lua.eventosunp.databinding.ActivityMainBinding
 import com.lua.eventosunp.ui.Repos.AlumnosRepos
-import com.lua.eventosunp.ui.adapters.AlumnoAdapter
 import com.lua.eventosunp.ui.fragments.FragmentAlumnos
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

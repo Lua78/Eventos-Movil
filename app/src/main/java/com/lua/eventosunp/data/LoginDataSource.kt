@@ -1,9 +1,7 @@
 package com.lua.eventosunp.data
 
-import com.lua.eventosunp.data.modelos.LoggedInUser
+import com.lua.eventosunp.data.DTO.LoggedInUser
 import com.lua.eventosunp.AuthManager
-import com.lua.eventosunp.api.RetrofitClient
-import com.lua.eventosunp.data.modelos.LoginResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException

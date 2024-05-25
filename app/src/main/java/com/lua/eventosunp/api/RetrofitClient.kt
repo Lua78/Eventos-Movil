@@ -20,7 +20,6 @@ object RetrofitClient {
 
 
 
-
     private val client = OkHttpClient.Builder()
         .addInterceptor(logging)
         .addInterceptor(AuthInterceptor())

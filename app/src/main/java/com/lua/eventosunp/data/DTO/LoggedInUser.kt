@@ -1,4 +1,4 @@
-package com.lua.eventosunp.data.modelos
+package com.lua.eventosunp.data.DTO
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

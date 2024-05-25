@@ -1,6 +1,4 @@
-package com.lua.eventosunp.data.modelos
-
-import com.lua.eventosunp.api.catalogs.Carreras
+package com.lua.eventosunp.data.DTO
 
 data class Carrera(
     val Departamento: String,

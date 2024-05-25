@@ -1,4 +1,4 @@
-package com.lua.eventosunp.data.modelos
+package com.lua.eventosunp.data.DTO
 
 data class Metadatos(
     val fieldCount: Int,

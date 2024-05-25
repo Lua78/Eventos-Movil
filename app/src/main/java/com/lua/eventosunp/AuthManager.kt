@@ -3,8 +3,7 @@ package com.lua.eventosunp
 import com.lua.eventosunp.api.LoginPost
 import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.api.UserData
-import com.lua.eventosunp.data.modelos.LoginResponse
-import kotlin.math.log
+import com.lua.eventosunp.data.DTO.LoginResponse
 
 object AuthManager {
 

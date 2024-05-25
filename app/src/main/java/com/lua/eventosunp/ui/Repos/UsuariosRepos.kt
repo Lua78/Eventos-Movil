@@ -2,7 +2,7 @@ package com.lua.eventosunp.ui.Repos
 
 import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.api.catalogs.Usuarios
-import com.lua.eventosunp.data.modelos.Usuario
+import com.lua.eventosunp.data.DTO.Usuario
 
 
 class UsuariosRepos {
