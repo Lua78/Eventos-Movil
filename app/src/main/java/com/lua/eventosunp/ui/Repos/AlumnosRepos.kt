@@ -41,19 +41,6 @@ class AlumnosRepos {
         }
     }
 
-    suspend fun actualizarAlumno(alumno: Alumno): String {
-        return try {
-            val response = apiService.update(alumno)
-            if (response.isSuccessful) {
-                "Alumno actualizado correctamente"
-            } else {
-                "Error al actualizar alumno"
-            }
-        } catch (e: Exception) {
-            "Error"
-        }
-    }
-
     // Eliminar un alumno
     suspend fun eliminarAlumno(alumno: Alumno): String {
         return try {
