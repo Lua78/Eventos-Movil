@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -38,12 +37,16 @@ class LoginActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         val login = binding.login
         val loading = binding.loading
 
-        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
-            .get(LoginViewModel::class.java)
-
+        loginViewModel = ViewModelProvider(this, LoginViewModelFactory(applicationContext))[LoginViewModel::class.java]
+        val token = loginViewModel.token.value
+        val payload = loginViewModel.payload.value
+        if (!token.isNullOrEmpty() && payload!=null && payload.nombre_usuario.isNotEmpty()) {
+            RetrofitClient.initialize(tokeProvider = token)
+            updateUiWithUser(LoggedInUserView(payload.nombre_usuario))
+            return
+        }
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
-
             // disable login button unless both username / contrasena is valid
             login.isEnabled = loginState.isDataValid
 
@@ -70,8 +73,6 @@ class LoginActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 updateUiWithUser(loginResult.success)
             }
             setResult(Activity.RESULT_OK)
-
-            //Complete and destroy login activity once successful
             finish()
         })
 

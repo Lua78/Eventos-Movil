@@ -8,6 +8,7 @@ import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
+
 private const val semiUrl: String = "api/alumnos/"
 
 interface Alumnos {
@@ -16,11 +17,11 @@ interface Alumnos {
     suspend fun get(): Response<AlumnosApiResponse>
 
     @DELETE("$semiUrl{carne}")
-    suspend fun delete()
+    suspend fun delete(@retrofit2.http.Path("carne") carne: String): Response<Unit>
 
     @PUT(semiUrl)
-    suspend fun update(@Body data: Alumno)
+    suspend fun update(@Body data: Alumno): Response<Unit>
 
     @POST(semiUrl)
-    suspend fun post(@Body alumno: Alumno)
+    suspend fun post(@Body alumno: Alumno): Response<Unit>
 }

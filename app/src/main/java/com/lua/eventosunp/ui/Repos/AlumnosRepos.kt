@@ -4,10 +4,11 @@ import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.api.catalogs.Alumnos
 import com.lua.eventosunp.data.DTO.Alumno
 
-
 class AlumnosRepos {
     private val apiService = RetrofitClient.instance.create(Alumnos::class.java)
-     suspend fun getAlumnos(): List<Alumno> {
+
+    // Obtener lista de alumnos
+    suspend fun getAlumnos(): List<Alumno> {
         return try {
             val response = apiService.get()
             if (response.isSuccessful) {
@@ -22,6 +23,47 @@ class AlumnosRepos {
             }
         } catch (e: Exception) {
             emptyList()
+        }
+    }
+
+    // Agregar un alumno
+    suspend fun agregarAlumno(alumno: Alumno): String {
+        return try {
+            val response = apiService.post(alumno)
+            if (response.isSuccessful) {
+                "Alumno agregado correctamente"
+            } else {
+                "Error al agregar alumno"
+            }
+        } catch (e: Exception) {
+            "Error"
+        }
+    }
+
+    suspend fun actualizarAlumno(alumno: Alumno): String {
+        return try {
+            val response = apiService.update(alumno)
+            if (response.isSuccessful) {
+                "Alumno actualizado correctamente"
+            } else {
+                "Error al actualizar alumno"
+            }
+        } catch (e: Exception) {
+            "Error"
+        }
+    }
+
+    // Eliminar un alumno
+    suspend fun eliminarAlumno(alumno: Alumno): String {
+        return try {
+            val response = apiService.delete(alumno.Carne)
+            if (response.isSuccessful) {
+                "Alumno eliminado correctamente"
+            } else {
+                "Error al eliminar alumno"
+            }
+        } catch (e: Exception) {
+            "Error"
         }
     }
 }

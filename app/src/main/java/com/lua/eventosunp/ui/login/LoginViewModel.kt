@@ -1,5 +1,6 @@
 package com.lua.eventosunp.ui.login
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,14 +8,27 @@ import com.lua.eventosunp.data.LoginRepository
 import com.lua.eventosunp.data.Result
 
 import com.lua.eventosunp.R
+import com.lua.eventosunp.data.DTO.Payload
 
-class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
+class LoginViewModel(private val loginRepository: LoginRepository,private val  context: Context) : ViewModel() {
 
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm
 
     private val _loginResult = MutableLiveData<LoginResult>()
     val loginResult: LiveData<LoginResult> = _loginResult
+
+    private val _token = MutableLiveData<String?>()
+    val token: LiveData<String?> = _token
+
+    private val _payload = MutableLiveData<Payload?>()
+    val payload: LiveData<Payload?> = _payload
+
+    init {
+        // Obtener el token y payload guardados al inicio
+        _token.value = loginRepository.getToken(context)
+        _payload.value = loginRepository.getPayload(context)
+    }
 
     suspend fun login(username: String, contrasena: String) {
         // can be launched in a separate asynchronous job
@@ -50,4 +64,11 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     private fun iscontrasenaValid(contrasena: String): Boolean {
         return contrasena.length > 5
     }
+    fun logout() {
+        loginRepository.logout()
+        _token.value = null
+        _payload.value = null
+    }
+
+
 }

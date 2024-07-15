@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lua.eventosunp.R
+import com.lua.eventosunp.data.DTO.Alumno
 import com.lua.eventosunp.ui.Repos.AlumnosRepos
 import com.lua.eventosunp.ui.adapters.AlumnoAdapter
 import kotlinx.coroutines.CoroutineScope
@@ -41,6 +42,27 @@ class FragmentAlumnos : Fragment() {
         CoroutineScope(Dispatchers.Main).launch {
             val alumnos = withContext(Dispatchers.IO) { repos.getAlumnos() }
             recyclerView.adapter = AlumnoAdapter(alumnos)
+        }
+    }
+
+    private fun agregarAlumno(alumno: Alumno) {
+        CoroutineScope(Dispatchers.Main).launch {
+            withContext(Dispatchers.IO) { repos.agregarAlumno(alumno) }
+            cargarAlumnos()
+        }
+    }
+
+    private fun actualizarAlumno(alumno: Alumno) {
+        CoroutineScope(Dispatchers.Main).launch {
+            withContext(Dispatchers.IO) { repos.actualizarAlumno(alumno) }
+            cargarAlumnos()
+        }
+    }
+
+    private fun eliminarAlumno(alumno: Alumno) {
+        CoroutineScope(Dispatchers.Main).launch {
+            withContext(Dispatchers.IO) { repos.eliminarAlumno(alumno) }
+            cargarAlumnos()
         }
     }
 

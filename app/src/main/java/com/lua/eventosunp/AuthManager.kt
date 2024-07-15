@@ -12,7 +12,6 @@ object AuthManager {
      suspend fun login(usuario: String, contrasena: String): Pair<Boolean, LoginResponse?> {
         val userData = UserData(usuario, contrasena)
         return try {
-
             val loginResponse = apiService.login(userData)
             val token = loginResponse.token
             RetrofitClient.initialize(tokeProvider = token)
