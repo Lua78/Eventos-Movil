@@ -84,8 +84,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val appContext = applicationContext
         val loginRepo = LoginDataSource(appContext)
 
-
-
         CoroutineScope(Dispatchers.Main).launch {
             loginRepo.logout()
             startActivity(Intent(appContext, LoginActivity::class.java).apply {

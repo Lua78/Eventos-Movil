@@ -1,0 +1,66 @@
+<!-- res/layout/dialog_agregar_alumno.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Aquí coloca los campos para ingresar los datos del alumno -->
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/etCarne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Carne" />
+
+    <EditText
+        android:id="@+id/etDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo" />
+    <EditText
+        android:id="@+id/etTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo" />
+    <EditText
+        android:id="@+id/etFecNac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo" />
+    <EditText
+        android:id="@+id/etCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo" />
+
+    <!-- Botones del diálogo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:backgroundTint="@color/colorRojo"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorVerde"
+            android:text="Guardar"/>
+    </LinearLayout>
+</LinearLayout>

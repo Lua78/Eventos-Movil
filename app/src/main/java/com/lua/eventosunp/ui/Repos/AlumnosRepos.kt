@@ -3,6 +3,7 @@ package com.lua.eventosunp.ui.Repos
 import com.lua.eventosunp.api.RetrofitClient
 import com.lua.eventosunp.api.catalogs.Alumnos
 import com.lua.eventosunp.data.DTO.Alumno
+import com.lua.eventosunp.ui.fragments.CRUDS.DTOs.AlumnoDto
 
 class AlumnosRepos {
     private val apiService = RetrofitClient.instance.create(Alumnos::class.java)
@@ -27,7 +28,7 @@ class AlumnosRepos {
     }
 
     // Agregar un alumno
-    suspend fun agregarAlumno(alumno: Alumno): String {
+    suspend fun agregarAlumno(alumno: AlumnoDto): String {
         return try {
             val response = apiService.post(alumno)
             if (response.isSuccessful) {
